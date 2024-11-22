@@ -2,7 +2,7 @@ const keys = [
   { key: "i", value: "up_arrow" },
   { key: "j", value: "left_arrow" },
   { key: "k", value: "down_arrow" },
-  { key: "l", value: "left_arrow" },
+  { key: "l", value: "right_arrow" },
   { key: "h", value: "delete_or_backspace" },
   {
     key: "v",
