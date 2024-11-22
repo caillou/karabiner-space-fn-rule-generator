@@ -1,27 +1,27 @@
 const keys = [
-  { key: "i", value: "up_arrow" },
-  { key: "j", value: "left_arrow" },
-  { key: "k", value: "down_arrow" },
-  { key: "l", value: "right_arrow" },
-  { key: "h", value: "delete_or_backspace" },
+  { from: "i", to: "up_arrow" },
+  { from: "j", to: "left_arrow" },
+  { from: "k", to: "down_arrow" },
+  { from: "l", to: "right_arrow" },
+  { from: "h", to: "delete_or_backspace" },
   {
-    key: "v",
-    value: {
+    from: "v",
+    to: {
       key_code: "v",
       modifiers: ["left_control", "left_option"],
     },
   },
   {
-    key: "u",
-    value: {
+    from: "u",
+    to: {
       // Go to previous tab in most apps
       key_code: "open_bracket",
       modifiers: ["left_command", "left_shift"],
     },
   },
   {
-    key: "o",
-    value: {
+    from: "o",
+    to: {
       // Go to previous tab in most apps
       key_code: "close_bracket",
       modifiers: ["left_command", "left_shift"],
@@ -32,8 +32,9 @@ const keys = [
 const config = {
   description: "SpaceFN",
   manipulators: keys
-    .map(({ key, value }) => {
-      const to = typeof value === "string" ? [{ key_code: value }] : [value];
+    .map(({ from, to: toValue }) => {
+      const to =
+        typeof toValue === "string" ? [{ key_code: toValue }] : [toValue];
       return [
         {
           conditions: [
@@ -45,7 +46,7 @@ const config = {
           ],
           from: {
             modifiers: { optional: ["any"] },
-            simultaneous: [{ key_code: "spacebar" }, { key_code: key }],
+            simultaneous: [{ key_code: "spacebar" }, { key_code: from }],
             simultaneous_options: {
               key_down_order: "strict",
               key_up_order: "strict_inverse",
@@ -80,7 +81,7 @@ const config = {
             },
           ],
           from: {
-            key_code: key,
+            key_code: from,
             modifiers: { optional: ["any"] },
           },
           to,
@@ -91,5 +92,5 @@ const config = {
     .flat(),
 };
 
-console.log(JSON.stringify(config, null, 2));
+// console.log(JSON.stringify(config, null, 2));
 console.log(JSON.stringify(config));
