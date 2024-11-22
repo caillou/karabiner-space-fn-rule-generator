@@ -76,3 +76,4 @@ const config = {
 };
 
 console.log(JSON.stringify(config, null, 2));
+console.log(JSON.stringify(config));
