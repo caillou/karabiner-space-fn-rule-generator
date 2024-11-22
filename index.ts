@@ -11,6 +11,22 @@ const keys = [
       modifiers: ["left_control", "left_option"],
     },
   },
+  {
+    key: "u",
+    value: {
+      // Go to previous tab in most apps
+      key_code: "open_bracket",
+      modifiers: ["left_command", "left_shift"],
+    },
+  },
+  {
+    key: "o",
+    value: {
+      // Go to previous tab in most apps
+      key_code: "close_bracket",
+      modifiers: ["left_command", "left_shift"],
+    },
+  },
 ] as const;
 
 const config = {
