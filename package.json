@@ -4,7 +4,8 @@
   "description": "Karabiner SpaceFN Rule Generator",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "generate": "tsx index.ts",
+    "generate:watch": "tsx index.ts --watch"
   },
   "author": "",
   "license": "ISC",
