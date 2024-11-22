@@ -1,2 +1,3 @@
-# karabiner-space-fn-rule-generator
-Karabiner SpaceFN Rule Generator
+# Karabiner SpaceFN Rule Generator
+
+This is just some quick and dirty code to generate a config for `SpaceFN` using Karabiner Elements.
