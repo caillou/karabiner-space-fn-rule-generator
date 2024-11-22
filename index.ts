@@ -22,7 +22,7 @@ const keys = [
   {
     from: "o",
     to: {
-      // Go to previous tab in most apps
+      // Go to next tab in most apps
       key_code: "close_bracket",
       modifiers: ["left_command", "left_shift"],
     },
