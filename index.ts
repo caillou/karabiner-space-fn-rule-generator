@@ -50,6 +50,7 @@ const config = {
             simultaneous_options: {
               key_down_order: "strict",
               key_up_order: "strict_inverse",
+              detect_key_down_uninterruptedly: true,
               to_after_key_up: [
                 {
                   set_variable: {
@@ -60,7 +61,10 @@ const config = {
               ],
             },
           },
-          parameters: { "basic.simultaneous_threshold_milliseconds": 500 },
+          parameters: {
+            // long press on space does not trigger a space and repetition of the key.
+            "basic.simultaneous_threshold_milliseconds": 10e3,
+          },
           to: [
             {
               set_variable: {
