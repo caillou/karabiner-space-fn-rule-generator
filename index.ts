@@ -50,7 +50,7 @@ const config = {
             simultaneous_options: {
               key_down_order: "strict",
               key_up_order: "strict_inverse",
-              detect_key_down_uninterruptedly: true,
+              // detect_key_down_uninterruptedly: true,
               to_after_key_up: [
                 {
                   set_variable: {
